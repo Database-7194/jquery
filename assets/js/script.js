@@ -105,28 +105,73 @@ Object.prototype.toggleClass = function (className) {
 Array.prototype.html = function (html) {
 
 	if (html) {
+
 		this.forEach(function (item) {
 			item.innerHTML = html;
 		});
+		return this;
+		
 	} else {
 		let items = [];
 		this.forEach(function (item, index) {
 			items[index] = item.innerHTML;
 		});
 		return items;
-
 	}
 }
 
 Object.prototype.html = function (html = undefined) {
 	if (html) {
-		return this.innerHTML = html;
+		this.innerHTML = html;
 	} else {
 		return this.innerHTML;
 	}
+	return this;
 }
 
 // HTML End //
+
+// Append //
+
+Array.prototype.append = function (html) {
+	if (html) {
+		this.forEach(function (item) {
+			item.innerHTML += html;
+		});
+	}
+	return this;
+}
+
+Object.prototype.append = function (html = undefined) {
+	if (html) {
+		this.innerHTML += html;
+	}
+	return this;
+}
+
+// Append End //
+
+
+// Prepend //
+
+Array.prototype.prepend = function (html) {
+	if (html) {
+		this.forEach(function (item) {
+			item.innerHTML = html + item.innerHTML;
+		});
+	}
+	return this;
+}
+
+Object.prototype.prepend = function (html = undefined) {
+	if (html) {
+		this.innerHTML = html + item.innerHTML;
+	}
+	return this;
+}
+
+// Prepend End //
+
 
 // Each //
 Array.prototype.each = function (callback) {
@@ -138,15 +183,15 @@ Array.prototype.each = function (callback) {
 
 // Hide //
 
-Array.prototype.hide = function(){
-	this.forEach(function(item){
+Array.prototype.hide = function () {
+	this.forEach(function (item) {
 		item.style.display = "none";
 	});
 	return this;
 }
 
-Object.prototype.hide = function(){
-	this.style.display  = "none";
+Object.prototype.hide = function () {
+	this.style.display = "none";
 	return this;
 }
 
@@ -154,15 +199,15 @@ Object.prototype.hide = function(){
 
 // Show //
 
-Array.prototype.show = function(){
-	this.forEach(function(item){
+Array.prototype.show = function () {
+	this.forEach(function (item) {
 		item.style.display = "block";
 	});
 	return this;
 }
 
-Object.prototype.show = function(){
-	this.style.display  = "block";
+Object.prototype.show = function () {
+	this.style.display = "block";
 	return this;
 }
 
@@ -170,13 +215,13 @@ Object.prototype.show = function(){
 
 // Remove //
 
-Array.prototype.remove = function(){
-	this.forEach(function(item){
+Array.prototype.remove = function () {
+	this.forEach(function (item) {
 		item.remove();
 	});
 }
 
-Object.prototype.remove = function(){
+Object.prototype.remove = function () {
 	return this.remove();
 }
 
