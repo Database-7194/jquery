@@ -102,7 +102,7 @@ Object.prototype.toggleClass = function (className) {
 
 // HTML //
 
-Array.prototype.html = function (html) {
+Array.prototype.html = function (html = undefined) {
 
 	if (html) {
 
@@ -110,7 +110,7 @@ Array.prototype.html = function (html) {
 			item.innerHTML = html;
 		});
 		return this;
-		
+
 	} else {
 		let items = [];
 		this.forEach(function (item, index) {
@@ -130,6 +130,37 @@ Object.prototype.html = function (html = undefined) {
 }
 
 // HTML End //
+
+// TEXT //
+
+Array.prototype.text = function (text = undefined) {
+
+	if (text) {
+
+		this.forEach(function (item) {
+			item.innerText = text;
+		});
+		return this;
+		
+	} else {
+		let items = [];
+		this.forEach(function (item, index) {
+			items[index] = item.innerText;
+		});
+		return items;
+	}
+}
+
+Object.prototype.text = function (text = undefined) {
+	if (text) {
+		this.innerText = text;
+	} else {
+		return this.innerText;
+	}
+	return this;
+}
+
+// TEXT End //
 
 // Append //
 

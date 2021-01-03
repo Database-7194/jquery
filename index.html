@@ -8,10 +8,11 @@
 </head>
 
 <style>
-    body{
+    body {
         margin: 5px;
         padding: 5px;
     }
+
     .test {
         padding: 3px;
         margin: 2px;
@@ -20,14 +21,21 @@
         width: 30px;
         text-align: center;
     }
+    div{
+        margin: 10px 0px;
+    }
 </style>
 
 <body>
 
     <div id="demo" onclick="$(this).toggleClass('test');">1</div>
 
-    <button onclick="$(this).remove();">test</button>
-
+    <div>
+        <input type="text" id="input">
+    </div>
+    <div>
+        <button onclick="$(this).remove();" id="btn">test</button>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 
