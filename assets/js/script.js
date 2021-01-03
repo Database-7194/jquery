@@ -141,7 +141,7 @@ Array.prototype.text = function (text = undefined) {
 			item.innerText = text;
 		});
 		return this;
-		
+
 	} else {
 		let items = [];
 		this.forEach(function (item, index) {
@@ -250,10 +250,91 @@ Array.prototype.remove = function () {
 	this.forEach(function (item) {
 		item.remove();
 	});
+	return this;
 }
 
 Object.prototype.remove = function () {
-	return this.remove();
+	this.remove();
+	return this;
 }
 
 // Remove End //
+
+// Focus //
+
+Object.prototype.focus = function () {
+	this.focus();
+	return this;
+}
+
+// Focus End //
+
+// FocusOut //
+
+Object.prototype.focusOut = function () {
+	this.blur();
+	return this;
+}
+
+// FocusOut End //
+
+
+// Click //
+
+Array.prototype.click = function () {
+	this.forEach(function (item) {
+		item.click();
+	});
+	return this;
+}
+
+Object.prototype.click = function () {
+	this.click();
+	return this;
+}
+
+// Click End //
+
+// Attr //
+
+Array.prototype.attr = function (attr, val = undefined) {
+	let items = [];
+	this.forEach(function (item, index) {
+		if (val) {
+			item.setAttribute(attr, val);
+		} else {
+			item.getAttribute(attr);
+		}
+		items[index] = item;
+	});
+	return items;
+}
+
+Object.prototype.attr = function (attr, val = undefined) {
+	if (val) {
+		this.setAttribute(attr, val);
+	} else {
+		return this.getAttribute(attr);
+	}
+	return this;
+}
+
+// Attr End //
+
+// RemoveAttr //
+
+Array.prototype.removeAttr = function (attr) {
+	let items = [];
+	this.forEach(function (item, index) {
+		item.removeAttribute(attr);
+		items[index] = item;
+	});
+	return items;
+}
+
+Object.prototype.removeAttr = function (attr) {
+	this.removeAttribute(attr);
+	return this;
+}
+
+// RemoveAttr End //
