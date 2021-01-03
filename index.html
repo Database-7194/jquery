@@ -7,10 +7,28 @@
     <title>Test</title>
 </head>
 
+<style>
+    body{
+        margin: 5px;
+        padding: 5px;
+    }
+    .test {
+        padding: 3px;
+        margin: 2px;
+        border: 1px solid black;
+        height: 20px;
+        width: 30px;
+        text-align: center;
+    }
+</style>
+
 <body>
-    <div id="demo" onclick="$(this).addClass(1);">1</div>
-    <div>2</div>
-    
+
+    <div id="demo" onclick="$(this).toggleClass('test');">1</div>
+
+    <button onclick="$(this).remove();">test</button>
+
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
