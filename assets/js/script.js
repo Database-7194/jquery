@@ -38,7 +38,7 @@ Template End */
 // On //
 
 Array.prototype.on = function (_event, callback) {
-	this.forEach(function (item, index) {
+	this.forEach(function (item) {
 		item.addEventListener(_event, callback);
 	});
 	return this;
@@ -54,7 +54,7 @@ Object.prototype.on = function (_event, callback) {
 // AddClass //
 
 Array.prototype.addClass = function (className) {
-	this.forEach(function (item, index) {
+	this.forEach(function (item) {
 		item.classList.add(className)
 	});
 	return this;
@@ -70,7 +70,7 @@ Object.prototype.addClass = function (className) {
 // RemoveClass //
 
 Array.prototype.removeClass = function (className) {
-	this.forEach(function (item, index) {
+	this.forEach(function (item) {
 		item.classList.remove(className)
 	});
 	return this;
@@ -87,7 +87,7 @@ Object.prototype.removeClass = function (className) {
 // ToggleClass //
 
 Array.prototype.toggleClass = function (className) {
-	this.forEach(function (item, index) {
+	this.forEach(function (item) {
 		item.classList.toggle(className);
 	});
 	return this;
@@ -105,7 +105,7 @@ Object.prototype.toggleClass = function (className) {
 Array.prototype.html = function (html) {
 
 	if (html) {
-		this.forEach(function (item, index) {
+		this.forEach(function (item) {
 			item.innerHTML = html;
 		});
 	} else {
@@ -139,7 +139,7 @@ Array.prototype.each = function (callback) {
 // Hide //
 
 Array.prototype.hide = function(){
-	this.forEach(function(item, index){
+	this.forEach(function(item){
 		item.style.display = "none";
 	});
 	return this;
@@ -151,3 +151,19 @@ Object.prototype.hide = function(){
 }
 
 // Hide End //
+
+// Show //
+
+Array.prototype.show = function(){
+	this.forEach(function(item){
+		item.style.display = "block";
+	});
+	return this;
+}
+
+Object.prototype.show = function(){
+	this.style.display  = "block";
+	return this;
+}
+
+// Show End //
