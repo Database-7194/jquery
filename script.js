@@ -27,7 +27,7 @@ Array.prototype.name = function(className){
 	return this;
 }
 
-Object.prototype.addClass = function(className){
+Object.prototype.name = function(className){
 	console.log(this);
 	return this;
 }
@@ -134,3 +134,20 @@ Array.prototype.each = function (callback) {
 	return this;
 }
 // Each End //
+
+
+// Hide //
+
+Array.prototype.hide = function(){
+	this.forEach(function(item, index){
+		item.style.display = "none";
+	});
+	return this;
+}
+
+Object.prototype.hide = function(){
+	this.style.display  = "none";
+	return this;
+}
+
+// Hide End //
