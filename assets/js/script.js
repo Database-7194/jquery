@@ -167,3 +167,17 @@ Object.prototype.show = function(){
 }
 
 // Show End //
+
+// Remove //
+
+Array.prototype.remove = function(){
+	this.forEach(function(item){
+		item.remove();
+	});
+}
+
+Object.prototype.remove = function(){
+	return this.remove();
+}
+
+// Remove End //
